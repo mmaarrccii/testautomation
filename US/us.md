@@ -46,14 +46,14 @@ So that I can reach my trolley
 # 7.
 As an automated test user
 
-I want to search "PICK Sertés párizsi 400 g"
+I want to search an item
 
 So that I can find it in the webshop (lang HU / lang EN)
 
 # 8.
 As an automated test user
 
-I want to add "PICK Sertés párizsi 400 g" into the trolley
+I want to add an item into the trolley
 
 So that the added item is stored in the trolley
 
@@ -69,18 +69,18 @@ And check the link is "https://bevasarlas.tesco.hu/groceries/hu-HU/products/2004
 # 10.
 As an automated test user
 
-I want to add 2 pcs of "PICK Sertés párizsi 400 g" into the trolley
+I want to add 2 pcs of an item into the trolley
 
 So that the added items are stored in the trolley
 
-And price should be 1998 Ft
+And price should be correct
 
 # 11.
 As an automated test user
 
-I want to remove 1 "PICK Sertés párizsi 400 g" from the trolley
+I want to remove 1 item from the trolley
 
-So that the guide price should be 999 Ft
+So that the guide price should be correct
 
 # 12.
 As an automated test user
