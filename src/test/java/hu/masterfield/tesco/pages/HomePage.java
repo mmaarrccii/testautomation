@@ -9,12 +9,10 @@ import static com.codeborne.selenide.Selenide.$;
 public class HomePage {
 
     public static final String COOKIE_ELFOGADASA = "Minden Cookie elfogadása";
-    String lang = null;
 
     SelenideElement buttonCookies = $(byText(COOKIE_ELFOGADASA));
 
     public void cookieButtonAvailable(){
-        buttonCookies.isDisplayed();
         buttonCookies.isEnabled();
     }
 
