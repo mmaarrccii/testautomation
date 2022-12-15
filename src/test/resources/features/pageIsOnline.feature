@@ -10,5 +10,4 @@ Feature: Page is online
       Given open the main page
 
     Scenario: Page is online
-      When the page is online
       Then I should see the accept cookies button
