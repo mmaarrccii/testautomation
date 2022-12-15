@@ -17,7 +17,7 @@ public class HomePage {
     }
 
     public void acceptCoockies(){
-        if (buttonCookies.isDisplayed()) {
+        if (buttonCookies.isEnabled()) {
             buttonCookies.click();
         }
     }

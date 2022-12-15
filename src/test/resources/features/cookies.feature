@@ -11,5 +11,5 @@ Feature: Cookies
       And the page is online
 
     Scenario: Accept cookies
-      When I accept cookies
+      When accept cookies
       Then the cookie panel closes

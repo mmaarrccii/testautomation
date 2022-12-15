@@ -7,7 +7,7 @@ Feature: Page is online
   Rule: It is allowed to login in webshop and reach a shopping basket
 
     Background:
-      Given open main page
+      Given open the main page
 
     Scenario: Page is online
-      Then I should see the accept cookies button
+      Then the page is online

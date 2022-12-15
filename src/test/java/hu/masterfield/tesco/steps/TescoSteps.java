@@ -19,8 +19,8 @@ public class TescoSteps {
     WebShopPage webShopPage;
     ProductPage productPage;
 
-    @Given("open main page")
-    public void openMainPage() {
+    @Given("open the main page")
+    public void openTheMainPage() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-blink-features=AutomationControlled");
         Configuration.browserCapabilities = options;
@@ -28,14 +28,19 @@ public class TescoSteps {
         open("https://bevasarlas.tesco.hu/groceries/hu-HU");
     }
 
-    @Then("I should see the accept cookies button")
-    public void iShouldSeeTheAcceptCookiesButton() {
+    @And("accept cookies")
+    public void acceptCookies() {
+        homePage.acceptCoockies();
+        homePage.validateCookiesAccepted();
+    }
+
+    @And("the page is online")
+    public void thePageIsOnline() {
         homePage.cookieButtonAvailable();
     }
 
-    @And("accept cookies")
-    public void acceptCookies() throws InterruptedException {
-        homePage.acceptCoockies();
+    @Then("the cookie panel closes")
+    public void theCookiePanelCloses() {
         homePage.validateCookiesAccepted();
     }
 }
