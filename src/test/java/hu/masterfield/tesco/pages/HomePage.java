@@ -15,6 +15,11 @@ public class HomePage {
     SelenideElement buttonLanguage = $(byId("utility-header-language-switch-link"));
     SelenideElement buttonSignIn = $(byId("utility-header-login-link"));
 
+    public void cookieButtonAvailable(){
+        buttonCookies.isDisplayed();
+        buttonCookies.isEnabled();
+    }
+
     public void acceptCoockies(){
         if (buttonCookies.isDisplayed()) {
             buttonCookies.click();
