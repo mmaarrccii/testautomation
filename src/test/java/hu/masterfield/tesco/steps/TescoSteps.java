@@ -14,7 +14,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TescoSteps {
 
-    String baseUrl = "https://bevasarlas.tesco.hu/groceries/hu-HU";
     HomePage homePage;
     LoginPage loginPage;
     WebShopPage webShopPage;
@@ -27,12 +26,6 @@ public class TescoSteps {
         Configuration.browserCapabilities = options;
 
         open("https://bevasarlas.tesco.hu/groceries/hu-HU");
-    }
-
-    @Given("open the main page")
-    public void openTheMainPage() throws InterruptedException {
-        homePage = open(baseUrl, HomePage.class);
-        homePage.validatePage();
     }
 
     @Then("I should see the accept cookies button")
