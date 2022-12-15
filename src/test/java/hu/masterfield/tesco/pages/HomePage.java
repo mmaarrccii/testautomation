@@ -12,8 +12,6 @@ public class HomePage {
     String lang = null;
 
     SelenideElement buttonCookies = $(byText(COOKIE_ELFOGADASA));
-    SelenideElement buttonLanguage = $(byId("utility-header-language-switch-link"));
-    SelenideElement buttonSignIn = $(byId("utility-header-login-link"));
 
     public void cookieButtonAvailable(){
         buttonCookies.isDisplayed();
@@ -24,34 +22,6 @@ public class HomePage {
         if (buttonCookies.isDisplayed()) {
             buttonCookies.click();
         }
-    }
-
-    public String getLang() {
-        setLangvalue();
-        return this.lang;
-    }
-
-    private void setLangvalue() {
-        if (buttonLanguage.innerText().equals("Magyar")){
-            this.lang = "English";
-        }
-        else if (buttonLanguage.innerText().equals("English")){
-            this.lang = "Magyar";
-        }
-    }
-
-    public void changeLang() {
-        buttonLanguage.click();
-    }
-
-    public LoginPage openLogin(){
-        buttonSignIn.click();
-        return new LoginPage();
-    }
-
-    public void validatePage() {
-        buttonLanguage.shouldBe(visible).shouldBe(enabled);
-        buttonSignIn.shouldBe(visible).shouldBe(enabled);
     }
 
     public void validateCookiesAccepted() {
