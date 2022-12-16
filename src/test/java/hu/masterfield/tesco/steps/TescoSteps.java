@@ -14,6 +14,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TescoSteps {
 
@@ -106,6 +107,23 @@ public class TescoSteps {
     @Then("I can see the {string} in results")
     public void isProductInResults(String productName) {
         webShopPage.validateProduct(productName);
+    }
+
+    @Given("language is set to {string}")
+    public void languageIsSetTo(String lang) {
+        iChangeTheLanguageTo(lang);
+    }
+
+    @When("I change the language to {string}")
+    public void iChangeTheLanguageTo(String lang) {
+        if (!homePage.getLang().equals(lang)) {
+            homePage.changeLang();
+        }
+    }
+
+    @Then("it shows elements in {string}")
+    public void itShowsElementsIn(String lang) {
+        assertEquals(lang, homePage.getLang());
     }
 }
 

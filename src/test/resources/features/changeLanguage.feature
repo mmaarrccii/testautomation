@@ -8,10 +8,9 @@ Feature: Change Language
 
     Background:
       Given open the main page
-      And the page is online
       And accept cookies
 
     Scenario: Change the language to english
-      Given language is set to hungarian
-      When I change the language to english
-      Then it shows elements in english
+      Given language is set to "Magyar"
+      When I change the language to "English"
+      Then it shows elements in "English"
