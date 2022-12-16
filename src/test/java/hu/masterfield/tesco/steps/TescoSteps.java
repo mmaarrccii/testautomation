@@ -132,5 +132,15 @@ public class TescoSteps {
     public void itemIsDisplayedInTheBasket() {
         webShopPage.validateBasketIcon();
     }
+
+    @When("I remove an item")
+    public void iRemoveAnItem() {
+        webShopPage.removeItem();
+    }
+
+    @Then("product will disappear from the basket")
+    public void productWillDisappearFromTheBasket() {
+        webShopPage.validateMissingBasket();
+    }
 }
 

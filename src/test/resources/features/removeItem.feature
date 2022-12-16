@@ -8,12 +8,13 @@ Feature: Remove item
 
     Background:
       Given open the main page
-      And the page is online
       And accept cookies
-      And sign in button is available
-      And I am signed in
-      And I search for an item
+      And I am on the login page
+      And I login account with username and password
+      And I am on the products page
+      And I search for "PICK szeletelt eredeti téliszalámi 100 g"
       And I add an item
+      And item is displayed in the basket
 
     Scenario: Remove item
       When I remove an item
