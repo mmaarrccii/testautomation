@@ -4,8 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Condition.enabled;
-import static com.codeborne.selenide.Selectors.byId;
-import static com.codeborne.selenide.Selectors.byPartialLinkText;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class WebShopPage {
@@ -14,6 +13,8 @@ public class WebShopPage {
     SelenideElement inputSearch = $(byId("search-input"));
     SelenideElement buttonLogout = $(byId("utility-header-logout-link"));
     SelenideElement buttonBasket = $("#mini-trolley > div.sc-ikJyIC.hkPkEY > a > span");
+    SelenideElement buttonAdd = $(byText("Hozzáad"));
+    SelenideElement buttonRemove = $(byId("delete-single-item mini-tile__delete button-secondary"));
 
     public WebShopPage search (String productName) {
         inputSearch.clear();
@@ -38,6 +39,8 @@ public class WebShopPage {
         inputSearch.shouldBe(visible).shouldBe(enabled);
     }
 
+    public void addItem() { buttonAdd.should(exist).click(); }
+
     public void validateBasketIcon() {
         buttonBasket.should(exist).shouldBe(visible);
     }
@@ -45,5 +48,9 @@ public class WebShopPage {
     public void validateMissingBasket() {
         buttonBasket.shouldNot(exist);
     }
+
+
+
+
 
 }

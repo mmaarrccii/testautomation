@@ -8,15 +8,15 @@ Feature: Add item
 
     Background:
       Given open the main page
-      And the page is online
       And accept cookies
-      And sign in button is available
-      And I am signed in
-      And I search for an item
+      And I am on the login page
+      And I login account with username and password
+      And I am on the products page
+      And I search for "PICK szeletelt eredeti téliszalámi 100 g"
 
     Scenario: Add item
       When I add an item
-      Then products are displayed in the basket
+      Then item is displayed in the basket
 
 
 

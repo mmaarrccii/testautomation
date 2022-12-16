@@ -2,7 +2,6 @@ package hu.masterfield.tesco.steps;
 
 import com.codeborne.selenide.Configuration;
 import hu.masterfield.tesco.pages.LoginPage;
-import hu.masterfield.tesco.pages.ProductPage;
 import hu.masterfield.tesco.pages.WebShopPage;
 import hu.masterfield.tesco.pages.HomePage;
 import io.cucumber.java.After;
@@ -21,8 +20,6 @@ public class TescoSteps {
     HomePage homePage;
     LoginPage loginPage;
     WebShopPage webShopPage;
-    ProductPage productPage;
-
 
     @Before
     public void setup() {
@@ -124,6 +121,16 @@ public class TescoSteps {
     @Then("it shows elements in {string}")
     public void itShowsElementsIn(String lang) {
         assertEquals(lang, homePage.getLang());
+    }
+
+    @When("I add an item")
+    public void iAddAnItem() {
+        webShopPage.addItem();
+    }
+
+    @Then("item is displayed in the basket")
+    public void itemIsDisplayedInTheBasket() {
+        webShopPage.validateBasketIcon();
     }
 }
 
