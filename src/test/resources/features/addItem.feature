@@ -1,4 +1,4 @@
-@Testcase8
+@Testcase3
 Feature: Add item
   As an automated test user
   I want to add item into the basket

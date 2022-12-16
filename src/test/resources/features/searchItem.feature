@@ -1,4 +1,4 @@
-@Testcase7
+@Testcase2
 Feature: Search item
   As an automated test user
   I want to search an item
@@ -8,11 +8,11 @@ Feature: Search item
 
     Background:
       Given open the main page
-      And the page is online
-      And accept cookies
-      And sign in button is available
-      And I am signed in
+       And accept cookies
+      And I am on the login page
+      And I login account with username and password
+      And I am on the products page
 
     Scenario: Search item
-      When I search for an item
-      Then results are displayed
+      When I search for "PICK eredeti téliszalámi"
+      Then I can see the "PICK eredeti téliszalámi" in results

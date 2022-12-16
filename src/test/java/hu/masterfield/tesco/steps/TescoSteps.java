@@ -96,5 +96,16 @@ public class TescoSteps {
     public void noBasketIconAvailable() {
         webShopPage.validateMissingBasket();
     }
+
+    @When("I search for {string}")
+    public void searchProductWith(String productName) {
+        webShopPage = webShopPage.search(productName);
+        webShopPage.validateProduct(productName);
+    }
+
+    @Then("I can see the {string} in results")
+    public void isProductInResults(String productName) {
+        webShopPage.validateProduct(productName);
+    }
 }
 

@@ -1,4 +1,4 @@
-@Testcase9
+@Testcase4
 Feature: Remove item
   As an automated test user
   I want to remove item from the basket

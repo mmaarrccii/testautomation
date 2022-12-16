@@ -1,4 +1,4 @@
-@Testcase3
+@Testcase0.1
 Feature: Change Language
   As an automated test user
   I want to be able to change language to English

@@ -1,4 +1,4 @@
-@Testcase5
+@Testcase0
 Feature: Register
   As an non-existing Tesco user
   I want to register into webshop
