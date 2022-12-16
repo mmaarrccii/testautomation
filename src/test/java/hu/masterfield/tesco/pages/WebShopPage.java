@@ -14,7 +14,7 @@ public class WebShopPage {
     SelenideElement buttonLogout = $(byId("utility-header-logout-link"));
     SelenideElement buttonBasket = $("#mini-trolley > div.sc-ikJyIC.hkPkEY > a > span");
     SelenideElement buttonAdd = $(byText("Hozzáad"));
-    SelenideElement buttonRemove = $(byText("PICK szeletelt eredeti téliszalámi 100 g eltávolítása a kosárból"));
+    SelenideElement buttonRemove = $("li.mini-trolley__content-item").$("button.delete-single-item > span.icon-delete-item"); // first item remove button
 
     public WebShopPage search (String productName) {
         inputSearch.clear();
@@ -49,7 +49,7 @@ public class WebShopPage {
         buttonBasket.shouldNot(exist);
     }
 
-    public void removeItem() { buttonRemove.should(exist).click(); }
+    public void removeItem() { buttonRemove.should(interactable).click(); }
 
 
 

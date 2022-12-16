@@ -15,3 +15,8 @@ Feature: Sign in
       When I login account with username and password
       Then I am on the products page
       And I should see the basket icon
+
+    Scenario: Sign in failed
+      Given I am on the login page
+      When I login with invalid username or password
+      Then I should see the error message on the login page

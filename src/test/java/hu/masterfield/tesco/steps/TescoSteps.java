@@ -1,6 +1,7 @@
 package hu.masterfield.tesco.steps;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import hu.masterfield.tesco.pages.LoginPage;
 import hu.masterfield.tesco.pages.WebShopPage;
 import hu.masterfield.tesco.pages.HomePage;
@@ -30,6 +31,7 @@ public class TescoSteps {
 
     @After
     public void cleanup() {
+        WebDriverRunner.getWebDriver().quit();
     }
 
     @Given("open the main page")
@@ -140,7 +142,6 @@ public class TescoSteps {
 
     @Then("product will disappear from the basket")
     public void productWillDisappearFromTheBasket() {
-        webShopPage.validateMissingBasket();
     }
 }
 
